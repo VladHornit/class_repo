@@ -1,11 +1,12 @@
 
 #Class exercise file
 class Book:
-    def __init__(self, title, book_id):
+    def __init__(self, title, book_id, status):
         self.title = title
         self.book_id = book_id
-book_1 = Book("The Great Gatsby", 1)
-book_2 = Book("The Lord of the Rings", 2)
+        self.status = status
+book_1 = Book("The Great Gatsby", 1, "avaliable")
+book_2 = Book("The Lord of the Rings", 2,"avaliable")
 
 
 
@@ -23,20 +24,35 @@ class Library:
         self.user_list.append(user)
 
 first_library = Library("Brussels", "Uccle libtary",[book_1], [])
-
-first_library.add_book(book_2)
+first_library.name = "paris"
+first_library.add_book(book=book_2)
 
 class User:
-    def __init__(self, name, borrowed_books):
-        self. name = name
+    def __init__(self, name_argument):
+        self.name = name_argument
         self.borrowed_books = []
 
     def borrow_book(self, library, book):
-        if book in book_list:
-            self.borrow_book.append(book)
+        for i in library.book_list:
+            print(i.status, i.title)
+        if book in library.book_list:
+            if i.status == "avaliable":
+                self.borrowed_books.append(book)
+            else:
+                print("The book is borrowed")
+            if book in self.borrowed_books:
+                #print(book.status)
+                book.status = "borrowed"
+                #print(book.status)
+                for i in library.book_list:
+                    print(i.status, i.title)
         else:
             print("Book is not in the library")
 
     def return_book(self, library, book):
-        if book in self.borrow_book:
-            self.borrow_book.remove(book)
+        if book in self.borrowed_books:
+            self.borrowed_books.remove(book)
+
+vlad = User("Vlad")
+vlad.borrow_book(first_library, book_1)
+vlad.return_book(first_library,book_1)
