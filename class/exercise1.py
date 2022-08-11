@@ -33,16 +33,18 @@ class User:
         self.borrowed_books = []
 
     def borrow_book(self, library, book):
-        for i in library.book_list:
-            print(i.status, i.title)
-        if book in library.book_list:
-            if i.status == "avaliable":
-                self.borrowed_books.append(book)
+        '''for i in library.book_list:
+            print(i.status, i.title)'''
+        if self in library.user_list:
+            if book in library.book_list:
+                if book.status == "avaliable":
+                    self.borrowed_books.append(book)
+                    book.status = "borrowed"
             else:
                 print("The book is borrowed")
-            if book in self.borrowed_books:
+
                 #print(book.status)
-                book.status = "borrowed"
+
                 #print(book.status)
                 for i in library.book_list:
                     print(i.status, i.title)
