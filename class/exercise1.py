@@ -66,17 +66,22 @@ class User:
 
 
 
-book_1 = Book("The Great Gatsby", 1, "avaliable", time.time())
-book_2 = Book("The Lord of the Rings", 2,"avaliable", time.time())
+book_1 = Book("The Great Gatsby", 1)
+book_2 = Book("The Lord of the Rings", 2)
+
+first_library = Library("Brussels", "Uccle libtary",[], [], 100)
+first_library.add_book(book_1)
+first_library.add_book(book_2)
+print(first_library.book_list)
+
+#first_library = Library("Brussels", "Uccle libtary",[book_1], [], 100)
+#first_library.name = "paris"
+#first_library.add_book(book=book_2)
+#vlad = User("Vlad")
+#first_library.add_users(vlad)
 
 
-first_library = Library("Brussels", "Uccle libtary",[book_1], [], 100)
-first_library.name = "paris"
-first_library.add_book(book=book_2)
-vlad = User("Vlad")
-first_library.add_users(vlad)
 
-
-
-vlad.borrow_book(first_library, book_1)
-vlad.return_book(first_library,book_1)
+#vlad.borrow_book(first_library, book_1)
+#time.sleep(4)
+#vlad.return_book(first_library,book_1)
