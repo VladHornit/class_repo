@@ -1,12 +1,16 @@
 
 #Class exercise file
 class Book:
-    def __init__(self, title, book_id, status):
+    def __init__(self, title, book_id, status, start_time):
+
         self.title = title
         self.book_id = book_id
         self.status = status
-book_1 = Book("The Great Gatsby", 1, "avaliable")
-book_2 = Book("The Lord of the Rings", 2,"avaliable")
+        self.start_time = start_time
+
+import time
+book_1 = Book("The Great Gatsby", 1, "avaliable", time.time())
+book_2 = Book("The Lord of the Rings", 2,"avaliable", time.time())
 
 
 
