@@ -19,15 +19,24 @@ class Library:
     def add_book(self, book):
         self.book_list.append(book)
 
-    def add_users(self, users):
-        user_list.append(user)
+    def add_users(self, user):
+        self.user_list.append(user)
 
 first_library = Library("Brussels", "Uccle libtary",[book_1], [])
 
 first_library.add_book(book_2)
 
 class User:
-    def __init__(self, borrowed_books):
+    def __init__(self, name, borrowed_books):
+        self. name = name
         self.borrowed_books = []
 
-    def borrow_book(self, library)
+    def borrow_book(self, library, book):
+        if book in book_list:
+            self.borrow_book.append(book)
+        else:
+            print("Book is not in the library")
+
+    def return_book(self, library, book):
+        if book in self.borrow_book:
+            self.borrow_book.remove(book)
