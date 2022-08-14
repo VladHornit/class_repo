@@ -20,6 +20,7 @@ class Diet:
             compute_diet_carbon_footprint = 5 * diet_carbon_foorprint / 6
         else:
             compute_diet_carbon_footprint = 3 * diet_carbon_foorprint / 4
+        return compute_diet_carbon_footprint
 
 class House:
     def __init__(self, flat, size, heating_temperature):
@@ -32,6 +33,7 @@ class House:
         footprint = (heating_temperature - 17) * 10 * size
         if flat == "flat":
             compute_house_footprint = 2 * footprint / 3
+        return compute_house_footprint
 
 
 class Trip:
