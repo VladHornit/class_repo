@@ -9,14 +9,13 @@ class Citizen:
 
 
 class Diet:
-    def __init__(self, vegetarian, organic, distance_from_farm):
-        self.vegetarian = vegetarian
-        self.orcanic = organic
+    def __init__(self, diet_type, distance_from_farm):
+        self.diet_type = diet_type
         self.distance_from_farm = distance_from_farm
 
-    def compute_diet_carbon_footprint(self, diet, distance_from_farm):
+    def compute_diet_carbon_footprint(self, diet_type, distance_from_farm):
         diet_carbon_footprint = 1000 * (distance_from_farm / 100)
-        if diet == "vegetarian":
+        if diet_type == "vegetarian":
             compute_diet_carbon_footprint = 5 * diet_carbon_foorprint / 6
         else:
             compute_diet_carbon_footprint = 3 * diet_carbon_foorprint / 4
@@ -49,3 +48,12 @@ class Trip:
         else:
             compute_trip_footprint = (distance / 100) * 0.2
         return compute_trip_footprint
+
+
+
+citizen_1 = Citizen("flat", "Kyiv", "organik")
+diet_citizen_1 = Diet("organik", 100)
+flat_1 = House("flat", 50, 20)
+trip_1 =Trip("plane", 2500)
+
+citizen_1.compute_carbon_foorprint(diet_citizen_1, flat_1, trip_1)
