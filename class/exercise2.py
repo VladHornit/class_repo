@@ -6,7 +6,7 @@ class Citizen:
 
     def compute_carbon_foorprint(self, compute_diet_carbon_footprint, compute_house_footprint, compute_trip_footprint):
         human_carbon_footprint = compute_diet_carbon_footprint + compute_house_footprint + compute_trip_footprint
-
+        return human_carbon_footprint
 
 class Diet:
     def __init__(self, diet_type, distance_from_farm):
@@ -54,6 +54,8 @@ class Trip:
 citizen_1 = Citizen("flat", "Kyiv", "organik")
 diet_citizen_1 = Diet("organik", 100)
 flat_1 = House("flat", 50, 20)
-trip_1 =Trip("plane", 2500)
+trip_1 = Trip("plane", 2500)
 
-citizen_1.compute_carbon_foorprint(diet_citizen_1, flat_1, trip_1)
+#print(citizen_1.compute_carbon_foorprint())
+#print(diet_citizen_1.diet_type)
+#print(diet_citizen_1.compute_diet_carbon_footprint)
