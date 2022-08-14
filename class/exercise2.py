@@ -56,7 +56,11 @@ diet_citizen_1 = Diet("organik", 100)
 flat_1 = House("flat", 50, 20)
 trip_1 = Trip("plane", 2500)
 
+
 #print(citizen_1.compute_carbon_foorprint())
-#print(diet_citizen_1.diet_type)
 #print(diet_citizen_1.compute_diet_carbon_footprint)
+#print(diet_citizen_1.diet_type)
+
+#print(flat_1.compute_house_footprint)
+#print(trip_1.compute_trip_footprint)
 #print(citizen_1.compute_carbon_foorprint(diet_citizen_1, flat_1, trip_1))
