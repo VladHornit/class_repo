@@ -4,15 +4,15 @@ class Citizen:
         self.trip = []
         self.diet = diet
 
+    def add_trip(self,trip):
+        self.trip.append(trip)
+
     def compute_carbon_footprint(self):
-        #human_carbon_footprint =  House.compute_house_footprint(self.house) + Trip.compute_trip_footprint(self.trip) + Diet.compute_diet_carbon_footprint(self.diet)
-        house_footprint =  self.house.compute_house_footprint()
-        result_trip_footprint = self.trip[0].compute_trip_footprint()
-        diet_footprint = self.diet.compute_diet_carbon_footprint()
-        human_carbon_footprint = house_footprint + diet_footprint
-        #print(house_footprint)
-        #print(trip_footprint)
-        #print(diet_footprint)
+        house_footprint_result =  self.house.compute_house_footprint()
+        trip_footprint_result = self.trip[0].compute_trip_footprint()
+        diet_footprint_result = self.diet.compute_diet_carbon_footprint()
+        human_carbon_footprint = house_footprint_result + diet_footprint_result + trip_footprint_result
+        #print(f"index 0", self.trip[0])
         return human_carbon_footprint
 
 
@@ -63,14 +63,14 @@ diet_1 = Diet("organik", 100)
 flat_1 = House("flat", 50, 20)
 trip_1 = Trip("plane", 2500)
 citizen_1 = Citizen(flat_1, trip_1, diet_1)
+citizen_1.add_trip(trip_1)
 
 print(diet_1.compute_diet_carbon_footprint())
 print(flat_1.compute_house_footprint())
 print(trip_1.compute_trip_footprint())
-
-#print(citizen_1.house)
 print(citizen_1.compute_carbon_footprint())
 
+#print(citizen_1.house)
 #print(diet_1.compute_diet_carbon_footprint("organik", 100))
 #print(flat_1.compute_house_footprint("flat", 50, 20))
 #print(trip_1.compute_trip_footprint("plane", 2500))
