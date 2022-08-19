@@ -5,8 +5,16 @@ class Citizen:
         self.diet = diet
 
     def compute_carbon_footprint(self):
-        human_carbon_footprint =  self.house.compute_house_footprint + self.trip.compute_trip_footprint + self.diet.compute_house_footprint
+        #human_carbon_footprint =  House.compute_house_footprint(self.house) + Trip.compute_trip_footprint(self.trip) + Diet.compute_diet_carbon_footprint(self.diet)
+        house_footprint =  self.house.compute_house_footprint()
+        result_trip_footprint = self.trip[0].compute_trip_footprint()
+        diet_footprint = self.diet.compute_diet_carbon_footprint()
+        human_carbon_footprint = house_footprint + diet_footprint
+        #print(house_footprint)
+        #print(trip_footprint)
+        #print(diet_footprint)
         return human_carbon_footprint
+
 
 class Diet:
     def __init__(self, diet_type, distance_from_farm):
@@ -60,7 +68,7 @@ print(diet_1.compute_diet_carbon_footprint())
 print(flat_1.compute_house_footprint())
 print(trip_1.compute_trip_footprint())
 
-print(citizen_1.house)
+#print(citizen_1.house)
 print(citizen_1.compute_carbon_footprint())
 
 #print(diet_1.compute_diet_carbon_footprint("organik", 100))
