@@ -29,8 +29,12 @@ class Shop:
         #print(self.product_list[0], self.product_list[1])
 
 
-    def checkout(self, customer):
-        total_price = customer.product_list.product.price * customer.product.product_avaliable_quantity
+    def checkout(self, shoping_cart):
+        n = 1
+        while n <= len(self.shoping_cart):
+            total_price = shoping_cart.price + shoping_cart.price
+            n += 1
+
         self.product_list.remove(self.shoping_cart.product)
 
 
